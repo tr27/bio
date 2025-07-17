@@ -1,13 +1,13 @@
 /* jshint esversion: 6 */
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- Timeline Data --- //
+    // --- Timeline Data , to add img, use liked this , where image: adds img{ year: '2024 and Onwards', image: 'img/my-stp.jpg', description: 'Going forward in clothing business and IT.' }  --- //
     const timelineData = [
-        { year: '1997-2010', image: 'img/fam.jpg', description: 'Born and raised in Shantikunj, Haridwar' },
+        { year: '1997-2010', description: 'Born and raised in Shantikunj, Haridwar' },
         { year: '2015',  description: "Completed my Intermidiate Education with CBSE - Commerce - at Gayatri Vidyapeeth." },
         { year: '2016 and Onwards', description: 'Started College studies at Pt. L.M.S Rishikesh - B.Com.' },
-        { year: '2019 and Onwards',  description: 'Hard lessons with my own Business.' },
-        { year: '2024 and Onwards', image: 'img/my-stp.jpg', description: 'Going forward in clothing business and IT.' }
+        { year: '2019 and Onwards',  description: 'Hard lessons with Business.' },
+        { year: '2024 and Onwards',  description: 'Going forward in clothing business and IT.' }
     ];
 
     const timelineContainer = document.querySelector('.timeline-container');
