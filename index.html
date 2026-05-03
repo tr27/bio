@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Matrimonial Profile of Alok Tripathi - Traditional Values, Modern Ambition.">
-    <title>Matrimonial Profile | Alok Tripathi</title>
+    <meta name="description" content="Matrimonial Profile of Alok Tripathi - Private & Confidential.">
+    <title>Matrimonial Profile | Private</title>
     
+    <!-- =========================================
+         PRIVACY & SECURITY PROTOCOLS
+    ========================================= -->
+    <!-- 1. Prevents Search Engines (Google/Bing) from indexing or caching your profile -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <!-- 2. Prevents tracking your visitors' navigation -->
+    <meta name="referrer" content="no-referrer">
+    <!-- 3. Stops browsers from guessing content types (prevents MIME-sniffing attacks) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!-- 4. Content Security Policy: Only allows styles/fonts from Google and images from your domain -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; script-src 'self' 'unsafe-inline';">
+
     <!-- Editorial & Tech Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,6 +72,12 @@
         }
         ::-webkit-scrollbar-thumb:hover {
             background: var(--tech-slate);
+        }
+
+        /* Security: Image Protection Class */
+        .protected-img {
+            -webkit-user-drag: none; /* Stops drag-and-drop saving */
+            user-select: none;
         }
 
         /* The Mantra Background */
@@ -409,14 +427,12 @@
             .hero-title { font-size: 4.5rem; }
             .hero-subtitle { border-left: none; border-top: 2px solid var(--saffron); padding-left: 0; padding-top: 1rem; display: inline-block; }
             
-            /* Portrait perfectly scaled for mobile */
             .profile-picture { margin: 0 auto; width: 85%; height: 400px; box-shadow: 10px 10px 0px var(--saffron); }
             .profile-picture:hover { transform: none; box-shadow: 10px 10px 0px var(--saffron); }
             
             .about-content { grid-template-columns: 1fr; gap: 3rem; }
             .details-grid { grid-template-columns: 1fr; }
             
-            /* QoL: Mobile Timeline Fix to prevent dots from going off-screen */
             .timeline-container { border-left-width: 1px; padding-left: 2rem; margin-left: 0.5rem; }
             .timeline-item::before { left: -2.35rem; width: 10px; height: 10px; }
             
@@ -428,7 +444,7 @@
 </head>
 <body>
 
-    <!-- QoL: aria-hidden hides this from screen readers -->
+    <!-- aria-hidden hides this from screen readers so they don't read raw unicode out loud -->
     <div class="bg-mantra-texture" aria-hidden="true">
         भूर्भुवः स्वः तत्सवितुर्वरेण्यं<br>भर्गो देवस्य धीमहि<br>धियो यो नः प्रचोदयात्
     </div>
@@ -438,13 +454,13 @@
         <section class="hero-section">
             <div class="container hero-grid">
                 <div class="hero-text-block">
-                    <!-- QoL: aria-hidden prevents screen readers from reading unicode -->
                     <div class="hero-om" aria-hidden="true">&#x1F549;</div>
                     <h1 class="hero-title">Alok<br>Tripathi</h1>
                     <div class="hero-subtitle font-tech">Traditional Values &bull; Modern Ambition <br> Business & IT</div>
                 </div>
                 <div>
-                    <img src="img/PXL_20260121_170528589.NIGHT.jpg" alt="Portrait of Alok Tripathi" class="profile-picture">
+                    <!-- Security: oncontextmenu and draggable false prevents easy image saving -->
+                    <img src="img/PXL_20260121_170528589.NIGHT.jpg" alt="Portrait of Alok Tripathi" class="profile-picture protected-img" oncontextmenu="return false;" draggable="false">
                 </div>
             </div>
         </section>
@@ -487,8 +503,8 @@
 
         <!-- FORMAL PICTURE -->
         <section style="text-align: center; padding: 2rem 0;">
-            <!-- QoL: Added loading="lazy" for better performance -->
-            <img src="img/formal-photo.jpg" alt="Formal Portrait of Alok Tripathi" loading="lazy" style="max-width: 90%; width: 400px; border: 1px solid var(--ink-black); padding: 10px; background: #fff;">
+            <!-- Security: Same image protection attributes applied -->
+            <img src="img/formal-photo.jpg" alt="Formal Portrait of Alok Tripathi" loading="lazy" class="protected-img" oncontextmenu="return false;" draggable="false" style="max-width: 90%; width: 400px; border: 1px solid var(--ink-black); padding: 10px; background: #fff;">
         </section>
 
         <!-- TIMELINE SECTION -->
@@ -541,14 +557,17 @@
                 <div>
                     <h2 class="footer-title">Contact<br>Information.</h2>
                 </div>
-                <div class="font-tech">
-                    <!-- QoL: Added +91 country code for NRI/International families -->
-                    <a href="tel:+918979xxxxxx" class="contact-link">+91 8979xxxxxx</a>
-                    <a href="mailto:aloktripathi.one@gmail.com" class="contact-link">aloktripathi.one@gmail.com</a>
+                
+                <!-- Security: This block is rendered via JavaScript to hide details from Spam Bots -->
+                <div class="font-tech" id="secure-contact">
+                    <noscript>
+                        <p style="color:var(--saffron); font-size: 0.9rem;">Please enable JavaScript to view contact details securely.</p>
+                    </noscript>
                 </div>
+
             </div>
             <div class="copyright font-tech">
-                &copy; <span id="current-year"></span> Prepared for the family of Alok Tripathi.
+                &copy; <span id="current-year"></span> Prepared for the family of Alok Tripathi. Confidential.
             </div>
         </div>
     </footer>
@@ -558,6 +577,27 @@
 
             // QoL: Dynamic Copyright Year
             document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // ---------------------------------------------------------
+            // Security: Anti-Spam Contact Info Obfuscation
+            // ---------------------------------------------------------
+            // To update your phone number, just change the numbers here.
+            // Spambots scraping HTML will not be able to read this.
+            const phonePart1 = "+91";
+            const phonePart2 = " 8979xxxxxx"; 
+            const emailUser = "aloktripathi.one";
+            const emailDomain = "gmail.com";
+
+            const contactDiv = document.getElementById('secure-contact');
+            if(contactDiv) {
+                const fullPhone = phonePart1 + phonePart2;
+                const cleanPhone = fullPhone.replace(/\s+/g, '');
+                
+                contactDiv.innerHTML = `
+                    <a href="tel:${cleanPhone}" class="contact-link">${fullPhone}</a>
+                    <a href="mailto:${emailUser}@${emailDomain}" class="contact-link">${emailUser}@${emailDomain}</a>
+                `;
+            }
 
             // Timeline Data Array
             const timelineData =[
@@ -573,10 +613,10 @@
                 const timelineItem = document.createElement('div');
                 timelineItem.classList.add('timeline-item');
                 
-                // QoL: Image support with lazy loading
                 let imageHtml = '';
                 if (item.image) {
-                    imageHtml = `<img src="${item.image}" alt="${item.year}" loading="lazy" style="width: 100%; max-width: 300px; border: 1px solid #1A1918; margin-top: 1rem; display: block;">`;
+                    // Applied security to timeline images too
+                    imageHtml = `<img src="${item.image}" alt="${item.year}" loading="lazy" class="protected-img" oncontextmenu="return false;" draggable="false" style="width: 100%; max-width: 300px; border: 1px solid #1A1918; margin-top: 1rem; display: block;">`;
                 }
 
                 timelineItem.innerHTML = `
