@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matrimonial Profile of Alok Tripathi - Traditional Values, Modern Ambition.">
     <title>Matrimonial Profile | Alok Tripathi</title>
     
     <!-- Editorial & Tech Fonts -->
@@ -23,18 +24,45 @@
             --spacing: 5rem;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-paper);
             color: var(--ink-black);
-            font-family: 'Cormorant Garamond', serif; /* Traditional foundation */
+            font-family: 'Cormorant Garamond', serif; 
             font-size: 1.25rem;
             line-height: 1.7;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* The Mantra as the Spiritual Foundation (Background) */
+        /* QoL: Custom Text Selection Highlight */
+        ::selection {
+            background-color: var(--saffron);
+            color: var(--bg-paper);
+        }
+
+        /* QoL: Custom Sleek Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-paper);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C4BEB4;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--tech-slate);
+        }
+
+        /* The Mantra Background */
         .bg-mantra-texture {
             position: fixed;
             top: 50%;
@@ -42,7 +70,7 @@
             transform: translate(-50%, -50%);
             font-size: 8vw;
             color: var(--saffron);
-            opacity: 0.04;
+            opacity: 0.07; 
             z-index: -1;
             white-space: nowrap;
             font-weight: 600;
@@ -87,6 +115,11 @@
             background-color: var(--saffron);
             opacity: 0.15;
             z-index: -1;
+            transition: height 0.3s ease;
+        }
+
+        .section-title:hover::before {
+            height: 20px;
         }
 
         /* Scroll Animation Setup */
@@ -103,7 +136,7 @@
         }
 
         /* =========================================
-           HERO SECTION (Auspicious & Striking)
+           HERO SECTION 
         ========================================= */
         .hero-section {
             min-height: 90vh;
@@ -127,6 +160,7 @@
             font-size: 2.5rem;
             color: var(--saffron);
             margin-bottom: 1rem;
+            user-select: none;
         }
 
         .hero-title {
@@ -145,23 +179,26 @@
             line-height: 1.6;
         }
 
-        /* The Archway Portrait (Cultural Identity + Modern Art) */
         .profile-picture {
             width: 100%;
             max-width: 400px;
             height: 500px;
             object-fit: cover;
-            /* Creates a traditional Indian/Mughal archway shape */
             border-radius: 200px 200px 0 0;
-            /* Brutalist offset shadow for modern personality */
             box-shadow: 15px 15px 0px var(--saffron);
             border: 2px solid var(--ink-black);
             margin-left: auto;
             display: block;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .profile-picture:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 20px 20px 0px var(--saffron);
         }
 
         /* =========================================
-           ABOUT SECTION (Editorial Layout)
+           ABOUT SECTION 
         ========================================= */
         .about-content {
             display: grid;
@@ -171,19 +208,18 @@
             padding-top: 4rem;
         }
 
-        /* Drop Cap for Editorial Feel */
         .bio p { margin-top: 0; margin-bottom: 1.5rem; }
         .bio p:first-child::first-letter {
-            font-size: 4.5rem;
+            font-size: 4.8rem;
             float: left;
-            line-height: 0.8;
+            line-height: 0.75;
             padding-right: 12px;
+            padding-top: 4px;
             color: var(--saffron);
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
         }
 
-        /* Matrimonial Key Details Box */
         .spec-sheet {
             background-color: #E6E1D6;
             padding: 2.5rem;
@@ -209,13 +245,13 @@
         }
 
         .spec-value {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--ink-black);
             font-weight: 600;
         }
 
         /* =========================================
-           TIMELINE SECTION (Education & Career)
+           TIMELINE SECTION 
         ========================================= */
         .timeline-container {
             border-left: 2px solid var(--ink-black);
@@ -230,7 +266,6 @@
 
         .timeline-item:last-child { margin-bottom: 0; }
 
-        /* Sharp geometric dot */
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -239,7 +274,12 @@
             width: 12px;
             height: 12px;
             background-color: var(--saffron);
-            transform: rotate(45deg); /* Tech diamond */
+            transform: rotate(45deg);
+            transition: background-color 0.3s ease;
+        }
+
+        .timeline-item:hover::before {
+            background-color: var(--tech-slate);
         }
 
         .timeline-year {
@@ -258,7 +298,7 @@
         }
 
         /* =========================================
-           ARCHIVAL CARDS (Family & Roots Grid)
+           ARCHIVAL CARDS 
         ========================================= */
         .details-grid {
             display: grid;
@@ -277,9 +317,9 @@
         .archive-card:hover {
             background-color: #E6E1D6;
             border-color: var(--ink-black);
+            transform: translateY(-3px);
         }
 
-        /* Card Header Line */
         .archive-card::before {
             content: '';
             position: absolute;
@@ -303,7 +343,7 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             font-family: 'Space Grotesk', sans-serif;
             font-size: 0.9rem;
         }
@@ -314,7 +354,7 @@
         .archive-value { color: var(--ink-black); font-weight: 600; text-align: right; }
 
         /* =========================================
-           FOOTER (Contact for Families)
+           FOOTER 
         ========================================= */
         footer {
             border-top: 2px solid var(--ink-black);
@@ -344,12 +384,13 @@
             border-bottom: 1px solid var(--ink-black);
             padding-bottom: 5px;
             margin-bottom: 10px;
-            transition: color 0.3s ease, border-color 0.3s ease;
+            transition: color 0.3s ease, border-color 0.3s ease, padding-left 0.3s ease;
         }
 
         .contact-link:hover {
             color: var(--saffron);
             border-color: var(--saffron);
+            padding-left: 10px;
         }
 
         .copyright {
@@ -367,20 +408,28 @@
             .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
             .hero-title { font-size: 4.5rem; }
             .hero-subtitle { border-left: none; border-top: 2px solid var(--saffron); padding-left: 0; padding-top: 1rem; display: inline-block; }
-            .profile-picture { margin: 0 auto; width: 80%; height: 400px; }
+            
+            /* Portrait perfectly scaled for mobile */
+            .profile-picture { margin: 0 auto; width: 85%; height: 400px; box-shadow: 10px 10px 0px var(--saffron); }
+            .profile-picture:hover { transform: none; box-shadow: 10px 10px 0px var(--saffron); }
             
             .about-content { grid-template-columns: 1fr; gap: 3rem; }
             .details-grid { grid-template-columns: 1fr; }
             
+            /* QoL: Mobile Timeline Fix to prevent dots from going off-screen */
+            .timeline-container { border-left-width: 1px; padding-left: 2rem; margin-left: 0.5rem; }
+            .timeline-item::before { left: -2.35rem; width: 10px; height: 10px; }
+            
             .footer-grid { grid-template-columns: 1fr; text-align: left; }
             .footer-title { font-size: 3.5rem; }
+            .contact-link:hover { padding-left: 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Background Mantra Texture -->
-    <div class="bg-mantra-texture">
+    <!-- QoL: aria-hidden hides this from screen readers -->
+    <div class="bg-mantra-texture" aria-hidden="true">
         भूर्भुवः स्वः तत्सवितुर्वरेण्यं<br>भर्गो देवस्य धीमहि<br>धियो यो नः प्रचोदयात्
     </div>
 
@@ -389,13 +438,13 @@
         <section class="hero-section">
             <div class="container hero-grid">
                 <div class="hero-text-block">
-                    <div class="hero-om">&#x1F549;</div>
+                    <!-- QoL: aria-hidden prevents screen readers from reading unicode -->
+                    <div class="hero-om" aria-hidden="true">&#x1F549;</div>
                     <h1 class="hero-title">Alok<br>Tripathi</h1>
                     <div class="hero-subtitle font-tech">Traditional Values &bull; Modern Ambition <br> Business & IT</div>
                 </div>
                 <div>
-                    <!-- Traditional Archway Portrait -->
-                    <img src="img/PXL_20260121_170528589.NIGHT.jpg" alt="Alok Tripathi" class="profile-picture">
+                    <img src="img/PXL_20260121_170528589.NIGHT.jpg" alt="Portrait of Alok Tripathi" class="profile-picture">
                 </div>
             </div>
         </section>
@@ -410,7 +459,6 @@
                         <p>Growing up, my time and attention were captivated by sports and technology. Academically, I pursued Commerce and Business Studies, alongside a passionate, self-driven interest in IT and computers. Today, I am combining these interests as I move forward with my own business ventures and AI computing.</p>
                     </div>
                     
-                    <!-- Core Matrimonial Details Box -->
                     <div class="spec-sheet font-tech">
                         <div class="spec-row">
                             <span class="spec-label">Name</span>
@@ -418,7 +466,7 @@
                         </div>
                         <div class="spec-row">
                             <span class="spec-label">Date of Birth</span>
-                            <span class="spec-value">27th January 1997</span>
+                            <span class="spec-value">27 January 1997</span>
                         </div>
                         <div class="spec-row">
                             <span class="spec-label">Education</span>
@@ -439,8 +487,8 @@
 
         <!-- FORMAL PICTURE -->
         <section style="text-align: center; padding: 2rem 0;">
-            <!-- IMPORTANT: Replace ".jpg" below with your actual formal image file name -->
-            <img src="img/formal-photo.jpg" alt="Formal Portrait" style="max-width: 90%; width: 400px; border: 1px solid var(--ink-black); padding: 10px; background: #fff;">
+            <!-- QoL: Added loading="lazy" for better performance -->
+            <img src="img/formal-photo.jpg" alt="Formal Portrait of Alok Tripathi" loading="lazy" style="max-width: 90%; width: 400px; border: 1px solid var(--ink-black); padding: 10px; background: #fff;">
         </section>
 
         <!-- TIMELINE SECTION -->
@@ -477,7 +525,7 @@
                     <div class="archive-card">
                         <h3>Lifestyle & Habits</h3>
                         <div class="archive-data"><span class="archive-label">Dietary</span> <span class="archive-value">Pure Vegetarian</span></div>
-                        <div class="archive-data"><span class="archive-label">Habits</span> <span class="archive-value">No Smoking / No Drinking</span></div>
+                        <div class="archive-data"><span class="archive-label">Habits</span> <span class="archive-value">No Smoking / Drinking</span></div>
                         <div class="archive-data"><span class="archive-label">Interests</span> <span class="archive-value">Football, Technology</span></div>
                     </div>
 
@@ -494,18 +542,22 @@
                     <h2 class="footer-title">Contact<br>Information.</h2>
                 </div>
                 <div class="font-tech">
-                    <a href="tel:8979xxxxxx" class="contact-link">8979xxxxxx</a>
+                    <!-- QoL: Added +91 country code for NRI/International families -->
+                    <a href="tel:+918979xxxxxx" class="contact-link">+91 8979xxxxxx</a>
                     <a href="mailto:aloktripathi.one@gmail.com" class="contact-link">aloktripathi.one@gmail.com</a>
                 </div>
             </div>
             <div class="copyright font-tech">
-                &copy; 2026 Prepared for the family of Alok Tripathi.
+                &copy; <span id="current-year"></span> Prepared for the family of Alok Tripathi.
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
+            // QoL: Dynamic Copyright Year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
 
             // Timeline Data Array
             const timelineData =[
@@ -521,10 +573,10 @@
                 const timelineItem = document.createElement('div');
                 timelineItem.classList.add('timeline-item');
                 
-                // Image support
+                // QoL: Image support with lazy loading
                 let imageHtml = '';
                 if (item.image) {
-                    imageHtml = `<img src="${item.image}" alt="${item.year}" style="width: 100%; max-width: 300px; border: 1px solid #1A1918; margin-top: 1rem; display: block;">`;
+                    imageHtml = `<img src="${item.image}" alt="${item.year}" loading="lazy" style="width: 100%; max-width: 300px; border: 1px solid #1A1918; margin-top: 1rem; display: block;">`;
                 }
 
                 timelineItem.innerHTML = `
