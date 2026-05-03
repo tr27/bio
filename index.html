@@ -246,21 +246,6 @@
             }
         }
 
-        @keyframes popOut {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            }
-            50% {
-                transform: scale(1.1);
-                box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            }
-        }
-
         .religious-astrological-section .details,
         .lifestyle-preferences-section .details,
         .religious-astrological-section p,
@@ -281,14 +266,13 @@
         footer a:hover { text-decoration: underline; }
 
         /* =========================================
-           MOBILE RESPONSIVENESS (Combined & Cleaned)
+           MOBILE RESPONSIVENESS
         ========================================= */
         @media (max-width: 768px) {
             .container {
                 width: 90%;
             }
 
-            /* Keeps the circular profile picture but scales it perfectly for smaller phones */
             .profile-picture {
                 width: 220px;
                 height: 220px;
@@ -334,18 +318,6 @@
                 left: 10px;
                 right: auto;
             }
-
-            .image-gallery img {
-                width: 100px;
-                height: 100px;
-            }
-
-            .family-section .image-gallery img {
-                width: 250px; 
-                height: 250px;
-                border: 5px solid #D0B8D5; 
-                box-shadow: 0 5px 10px rgba(0,0,0,0.2); 
-            }
         }
     </style>
 </head>
@@ -386,6 +358,7 @@
         </section>
 
         <section class="formal-picture-section">
+            <!-- IMPORTANT: Replace ".jpg" below with your actual file name (e.g., "formal-photo.jpg") -->
             <img src="img/.jpg" alt="Formal Picture">
         </section>
 
@@ -442,13 +415,12 @@
     </footer>
 
     <script>
-        /* jshint esversion: 6 */
         document.addEventListener('DOMContentLoaded', function() {
 
             // --- Timeline Data --- //
             const timelineData =[
                 { year: '1997-2010', description: 'Born and raised in Shantikunj, Haridwar' },
-                { year: '2015',  description: "Completed my Intermediate Education with CBSE - Commerce - at Gayatri Vidyapeeth." },
+                { year: '2015',  description: 'Completed my Intermediate Education with CBSE - Commerce - at Gayatri Vidyapeeth.' },
                 { year: '2016 and Onwards', description: 'Started College studies at Pt. L.M.S Rishikesh - B.Com.' },
                 { year: '2019 and Onwards',  description: 'Hard lessons with Business.' },
                 { year: '2024 and Onwards',  description: 'Going forward in clothing business and IT.' }
