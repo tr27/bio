@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Removed the cheesy marketing line. Now it's just a highly professional, quiet dossier. -->
+    
+    <!-- Standard Meta Description -->
     <meta name="description" content="Personal and professional dossier of Alok Tripathi. Confidential.">
     <title>Alok Tripathi | Personal & Professional Profile</title>
     
+    <!-- =========================================
+         SOCIAL MEDIA LINK PREVIEW TAGS (Open Graph)
+    ========================================= -->
+    <meta property="og:title" content="Alok Tripathi | Personal & Professional Profile">
+    <meta property="og:description" content="Personal and professional dossier of Alok Tripathi. Confidential.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Alok Tripathi | Personal & Professional Profile">
+    <meta name="twitter:description" content="Personal and professional dossier of Alok Tripathi. Confidential.">
+
     <!-- =========================================
          PRIVACY & SECURITY PROTOCOLS
     ========================================= -->
@@ -57,19 +68,10 @@
         }
 
         /* Custom Sleek Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-paper);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #C4BEB4;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--tech-slate);
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-paper); }
+        ::-webkit-scrollbar-thumb { background: #C4BEB4; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--tech-slate); }
 
         /* Security: Image Protection Class */
         .protected-img {
@@ -102,16 +104,8 @@
         }
 
         /* Typography Styles */
-        h1, h2, h3 {
-            font-weight: 400;
-            margin: 0;
-            color: var(--ink-black);
-            line-height: 1.1;
-        }
-
-        .font-tech {
-            font-family: 'Space Grotesk', sans-serif;
-        }
+        h1, h2, h3 { font-weight: 400; margin: 0; color: var(--ink-black); line-height: 1.1; }
+        .font-tech { font-family: 'Space Grotesk', sans-serif; }
 
         .section-title {
             font-size: 3.5rem;
@@ -133,9 +127,7 @@
             transition: height 0.3s ease;
         }
 
-        .section-title:hover::before {
-            height: 20px;
-        }
+        .section-title:hover::before { height: 20px; }
 
         /* Scroll Animation Setup */
         section {
@@ -144,11 +136,7 @@
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .visible { opacity: 1; transform: translateY(0); }
 
         /* =========================================
            HERO SECTION 
@@ -167,9 +155,7 @@
             align-items: center;
         }
 
-        .hero-text-block {
-            position: relative;
-        }
+        .hero-text-block { position: relative; }
 
         /* The Elegant Om Seal */
         .hero-om {
@@ -211,31 +197,23 @@
             line-height: 1.6;
         }
 
-        /* Custom Studio Backdrop & Filter for Transparent PNG */
+        /* Natural Profile Picture (No CSS Filters) */
         .profile-picture {
             width: 100%;
             max-width: 400px;
             height: 500px;
             object-fit: cover;
-            object-position: bottom center; /* Anchors the cutout to the bottom */
             border-radius: 200px 200px 0 0;
             box-shadow: 15px 15px 0px var(--saffron);
             border: 2px solid var(--ink-black);
             margin-left: auto;
             display: block;
-            transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
-            
-            /* Professional Studio Backdrop Glow */
-            background: radial-gradient(circle at 50% 20%, #FFFDF9 0%, #E3D5C4 60%, #BBA892 100%);
-            
-            /* The "Handsome" Filter: Skin warmth, boosted saturation, sharp contrast */
-            filter: sepia(15%) saturate(115%) contrast(105%) brightness(102%);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
         }
 
         .profile-picture:hover {
             transform: translate(-5px, -5px);
             box-shadow: 20px 20px 0px var(--saffron);
-            filter: sepia(10%) saturate(120%) contrast(105%) brightness(106%);
         }
 
         /* =========================================
@@ -285,11 +263,7 @@
             margin-bottom: 0.2rem;
         }
 
-        .spec-value {
-            font-size: 1.05rem;
-            color: var(--ink-black);
-            font-weight: 600;
-        }
+        .spec-value { font-size: 1.05rem; color: var(--ink-black); font-weight: 600; }
 
         /* =========================================
            TIMELINE SECTION 
@@ -300,11 +274,7 @@
             margin-left: 1rem;
         }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 4rem;
-        }
-
+        .timeline-item { position: relative; margin-bottom: 4rem; }
         .timeline-item:last-child { margin-bottom: 0; }
 
         .timeline-item::before {
@@ -319,9 +289,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .timeline-item:hover::before {
-            background-color: var(--tech-slate);
-        }
+        .timeline-item:hover::before { background-color: var(--tech-slate); }
 
         .timeline-year {
             font-size: 1.1rem;
@@ -331,12 +299,7 @@
             font-weight: 600;
         }
 
-        .timeline-desc {
-            font-size: 1.4rem;
-            color: var(--ink-black);
-            line-height: 1.4;
-            margin: 0;
-        }
+        .timeline-desc { font-size: 1.4rem; color: var(--ink-black); line-height: 1.4; margin: 0; }
 
         /* =========================================
            ARCHIVAL CARDS 
@@ -374,11 +337,7 @@
 
         .archive-card:hover::before { width: 100%; }
 
-        .archive-card h3 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
+        .archive-card h3 { font-size: 2rem; margin-bottom: 2rem; font-style: italic; }
 
         .archive-data {
             display: flex;
@@ -449,9 +408,7 @@
             .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
             .hero-title { font-size: 4.5rem; }
             
-            /* Subtitle on mobile aligned nicely */
             .hero-subtitle { border-left: none; border-top: 2px solid var(--saffron); padding-left: 0; padding-top: 1rem; display: inline-block; }
-            
             .hero-om { margin: 0 auto 1.5rem auto; }
             
             .profile-picture { margin: 0 auto; width: 85%; height: 400px; box-shadow: 10px 10px 0px var(--saffron); }
@@ -471,7 +428,7 @@
 </head>
 <body>
 
-    <!-- aria-hidden hides this from screen readers so they don't read raw unicode out loud -->
+    <!-- aria-hidden hides this from screen readers -->
     <div class="bg-mantra-texture" aria-hidden="true">
         भूर्भुवः स्वः तत्सवितुर्वरेण्यं<br>भर्गो देवस्य धीमहि<br>धियो यो नः प्रचोदयात्
     </div>
@@ -481,15 +438,14 @@
         <section class="hero-section">
             <div class="container hero-grid">
                 <div class="hero-text-block">
-                    <!-- Elegant Om Seal using proper Devanagari text -->
+                    <!-- Elegant Om Seal using pure text symbol -->
                     <div class="hero-om" aria-hidden="true">&#x0950;</div>
                     <h1 class="hero-title">Alok<br>Tripathi</h1>
-                    <!-- Factual, understated subtitle. No marketing speak. -->
                     <div class="hero-subtitle font-tech">Haridwar &bull; Business &bull; AI Computing</div>
                 </div>
                 <div>
-                    <!-- REMINDER: Update src to your new background-free PNG for the studio effect -->
-                    <img src="img/your-transparent-photo.png" alt="Portrait of Alok Tripathi" class="profile-picture protected-img" oncontextmenu="return false;" draggable="false">
+                    <!-- Raw, unedited image file with no CSS filters -->
+                    <img src="img/PXL_20260121_170528589.NIGHT.jpg" alt="Portrait of Alok Tripathi" class="profile-picture protected-img" oncontextmenu="return false;" draggable="false">
                 </div>
             </div>
         </section>
@@ -532,6 +488,7 @@
 
         <!-- FORMAL PICTURE -->
         <section style="text-align: center; padding: 2rem 0;">
+            <!-- Don't forget to link your formal photo here! -->
             <img src="img/formal-photo.jpg" alt="Formal Portrait of Alok Tripathi" loading="lazy" class="protected-img" oncontextmenu="return false;" draggable="false" style="max-width: 90%; width: 400px; border: 1px solid var(--ink-black); padding: 10px; background: #fff;">
         </section>
 
@@ -586,7 +543,7 @@
                     <h2 class="footer-title">Contact<br>Information.</h2>
                 </div>
                 
-                <!-- Security: This block is rendered via JavaScript to hide details from Spam Bots -->
+                <!-- Security: Rendered via JavaScript to hide from Spam Bots -->
                 <div class="font-tech" id="secure-contact">
                     <noscript>
                         <p style="color:var(--saffron); font-size: 0.9rem;">Please enable JavaScript to view contact details securely.</p>
