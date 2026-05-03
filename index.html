@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Biodata Profile of Alok Tripathi - Private & Confidential.">
-    <title>Biodata Profile | Private</title>
+    <meta name="description" content="Personal and professional dossier of Alok Tripathi. Bridging traditional values with modern ambition in Business and IT/AI.">
+    <title>Alok Tripathi | Personal & Professional Profile</title>
     
     <!-- =========================================
          PRIVACY & SECURITY PROTOCOLS
     ========================================= -->
-    <!-- 1. Prevents Search Engines (Google/Bing) from indexing or caching your profile -->
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
-    <!-- 2. Prevents tracking your visitors' navigation -->
     <meta name="referrer" content="no-referrer">
-    <!-- 3. Stops browsers from guessing content types (prevents MIME-sniffing attacks) -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <!-- 4. Content Security Policy: Only allows styles/fonts from Google and images from your domain -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; script-src 'self' 'unsafe-inline';">
 
     <!-- Editorial & Tech Fonts -->
@@ -53,13 +49,13 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* QoL: Custom Text Selection Highlight */
+        /* Custom Text Selection Highlight */
         ::selection {
             background-color: var(--saffron);
             color: var(--bg-paper);
         }
 
-        /* QoL: Custom Sleek Scrollbar */
+        /* Custom Sleek Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -76,7 +72,7 @@
 
         /* Security: Image Protection Class */
         .protected-img {
-            -webkit-user-drag: none; /* Stops drag-and-drop saving */
+            -webkit-user-drag: none; 
             user-select: none;
         }
 
@@ -174,11 +170,28 @@
             position: relative;
         }
 
+        /* The Elegant Om Seal */
         .hero-om {
-            font-size: 2.5rem;
-            color: var(--saffron);
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: var(--ink-black);
+            opacity: 0.35;
+            margin-bottom: 2rem;
             user-select: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            border: 1px solid var(--line-art);
+            border-radius: 50%;
+            font-family: 'Cormorant Garamond', serif;
+            transition: all 0.5s ease;
+        }
+
+        .hero-om:hover {
+            opacity: 0.8;
+            color: var(--saffron);
+            border-color: var(--saffron);
         }
 
         .hero-title {
@@ -427,6 +440,8 @@
             .hero-title { font-size: 4.5rem; }
             .hero-subtitle { border-left: none; border-top: 2px solid var(--saffron); padding-left: 0; padding-top: 1rem; display: inline-block; }
             
+            .hero-om { margin: 0 auto 1.5rem auto; }
+            
             .profile-picture { margin: 0 auto; width: 85%; height: 400px; box-shadow: 10px 10px 0px var(--saffron); }
             .profile-picture:hover { transform: none; box-shadow: 10px 10px 0px var(--saffron); }
             
@@ -454,7 +469,8 @@
         <section class="hero-section">
             <div class="container hero-grid">
                 <div class="hero-text-block">
-                    <div class="hero-om" aria-hidden="true">&#x1F549;</div>
+                    <!-- Elegant Om Seal using proper Devanagari text instead of Emoji -->
+                    <div class="hero-om" aria-hidden="true">&#x0950;</div>
                     <h1 class="hero-title">Alok<br>Tripathi</h1>
                     <div class="hero-subtitle font-tech">Traditional Values &bull; Modern Ambition <br> Business & IT</div>
                 </div>
@@ -503,7 +519,6 @@
 
         <!-- FORMAL PICTURE -->
         <section style="text-align: center; padding: 2rem 0;">
-            <!-- Security: Same image protection attributes applied -->
             <img src="img/formal-photo.jpg" alt="Formal Portrait of Alok Tripathi" loading="lazy" class="protected-img" oncontextmenu="return false;" draggable="false" style="max-width: 90%; width: 400px; border: 1px solid var(--ink-black); padding: 10px; background: #fff;">
         </section>
 
@@ -567,7 +582,7 @@
 
             </div>
             <div class="copyright font-tech">
-                &copy; <span id="current-year"></span> Prepared for the family of Alok Tripathi. Confidential.
+                &copy; <span id="current-year"></span> Alok Tripathi. Professional & Personal Profile. Confidential.
             </div>
         </div>
     </footer>
@@ -575,14 +590,13 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            // QoL: Dynamic Copyright Year
+            // Dynamic Copyright Year
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
             // ---------------------------------------------------------
             // Security: Anti-Spam Contact Info Obfuscation
             // ---------------------------------------------------------
             // To update your phone number, just change the numbers here.
-            // Spambots scraping HTML will not be able to read this.
             const phonePart1 = "+91";
             const phonePart2 = " 8979xxxxxx"; 
             const emailUser = "aloktripathi.one";
@@ -615,7 +629,6 @@
                 
                 let imageHtml = '';
                 if (item.image) {
-                    // Applied security to timeline images too
                     imageHtml = `<img src="${item.image}" alt="${item.year}" loading="lazy" class="protected-img" oncontextmenu="return false;" draggable="false" style="width: 100%; max-width: 300px; border: 1px solid #1A1918; margin-top: 1rem; display: block;">`;
                 }
 
